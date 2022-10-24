@@ -1,0 +1,32 @@
+<h1>Binary tree</h1>
+<button (click)="generateRandomBinaryTree()">Generate tree</button>
+<button (click)="startDepthFirstSearch()">Start depth-first tree search</button>
+<button (click)="startBreadthFirstSearch()">
+  Start breadth-first tree search
+</button>
+<button (click)="resetResult(); searchInTree(nodeRoot, 8)">
+  Search number 8
+</button>
+<button (click)="invertTree()">Invert</button>
+<label for="speed">Speed(ms)</label>
+<input name="speed" type="number" [(ngModel)]="speed" />
+<br />
+<br />
+<br />
+<div class="row">
+    <div style="background: #fafafa">
+        <div style="text-align: center">
+            <app-node [node]="nodeRoot"></app-node>
+        </div>
+    </div>
+    <div style="background: #fff6d0">
+        <h2>Stack or Queue</h2>
+        <div class="colReverse">
+            <div *ngFor="let node of nodePath">
+                <div>{{ node.value }}</div>
+            </div>
+        </div>
+        <h2>Result</h2>
+        <div>{{ result | json }}</div>
+    </div>
+</div>

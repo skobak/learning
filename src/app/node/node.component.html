@@ -1,0 +1,13 @@
+<div class="nodeContainer">
+    <div class="node" [ngClass]="{ visited: node?.isVisited, traced: node?.isTraced }">
+        {{ node?.value }}
+    </div>
+    <div class="row">
+        <ng-container *ngIf="node?.left !== null">
+            <app-node [node]="node!.left"></app-node>
+        </ng-container>
+        <ng-container *ngIf="node?.right !== null">
+            <app-node [node]="node!.right"></app-node>
+        </ng-container>
+    </div>
+</div>
